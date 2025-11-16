@@ -41,3 +41,13 @@ const filterByRating = (arrayWithObj: Item[]): Item[] => {
   return arrayWithObj.filter((item) => item.rating >= 4);
 };
 
+type Users = {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+const filterActiveUsers = (arrayOfUserObj: Users[]): Users[] => {
+  return arrayOfUserObj.filter((user) => user.isActive);
+};
+
