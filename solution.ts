@@ -64,3 +64,34 @@ const printBookDetails = (obj: Book) => {
     }, Available: ${obj.isAvailable ? "Yes" : "No"}`
   );
 };
+
+type ArrayType = string | number;
+const getUniqueValues = (arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] => {
+  const newArr: ArrayType[] = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    let isDuplicate = false;
+    for (let j = 0; j < newArr.length; j++) {
+      if (arr1[i] === newArr[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+    if (!isDuplicate) {
+      newArr.push(arr1[i]);
+    }
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    let isDuplicate = false;
+    for (let j = 0; j < newArr.length; j++) {
+      if (arr2[i] === newArr[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+    if (!isDuplicate) {
+      newArr.push(arr2[i]);
+    }
+  }
+  return newArr;
+};
